@@ -33,6 +33,7 @@ const withPWA = withPWAInit({
 
 const nextConfig = {
   reactStrictMode: true,
+  turbopack: {},
   images: {
     domains: ['m.media-amazon.com'],
   },
