@@ -8,17 +8,36 @@
 
 // export default nextConfig;
 
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+// const nextConfig: NextConfig = {
+//   reactStrictMode: true,
+//   reactCompiler: true,
+//   images: {
+//     domains: [
+//       "m.media-amazon.com", // add any external domains you need
+//       // "image.tmdb.org",  // example of another movie API domain
+//     ],
+//   },
+// };
+
+// export default nextConfig;
+
+import withPWAInit from "@ducanh2912/next-pwa";
+
+/** @type {import('next').NextConfig} */
+
+const withPWA = withPWAInit({
+  dest: 'public'
+})
+
+const nextConfig = {
   reactStrictMode: true,
-  reactCompiler: true,
   images: {
-    domains: [
-      "m.media-amazon.com", // add any external domains you need
-      // "image.tmdb.org",  // example of another movie API domain
-    ],
+    domains: ['m.media-amazon.com'],
   },
 };
 
-export default nextConfig;
+export default withPWA({
+  ...nextConfig
+})
